@@ -23,7 +23,7 @@ class Slack extends Adapter
       if !params.noescape
         str = @escapeHtml str
       args = JSON.stringify
-        username : @robot.name
+        username : params.robot_name || @robot.name
         channel  : user.reply_to
         text     : str
 
