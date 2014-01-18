@@ -20,7 +20,8 @@ class Slack extends Adapter
     user = @userFromParams params
 
     strings.forEach (str) =>
-      str = @escapeHtml str
+      if !params.noescape
+        str = @escapeHtml str
       args = JSON.stringify
         username : @robot.name
         channel  : user.reply_to
