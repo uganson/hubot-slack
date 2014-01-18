@@ -25,7 +25,9 @@ class Slack extends Adapter
       args = JSON.stringify
         username : params.robot_name || @robot.name
         channel  : user.reply_to
-        text     : str
+        text     : str.text || str
+        icon_emoji : params.robot_icon
+        attachmetns : str.attachments
 
       @post "/services/hooks/hubot", args
 
