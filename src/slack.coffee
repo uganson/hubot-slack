@@ -27,7 +27,7 @@ class Slack extends Adapter
         channel  : user.reply_to
         text     : str.text || str
         icon_emoji : params.robot_icon
-        attachmetns : str.attachments
+        attachments : str.attachments
 
       @post "/services/hooks/hubot", args
 
